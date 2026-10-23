@@ -1,17 +1,10 @@
-#依赖包列表
 streamlit
 python-dotenv
 langchain
 langchain-community
-openai
-dashscope
-
-#可以在 PyCharm 的终端里运行 pip install -r requirements.txt 来一次性安装它们。
-streamlit
-python-dotenv
-langchain-community
 langchain-core
 langchain-text-splitters
+openai
 dashscope
 pymilvus
 python-docx

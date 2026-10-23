@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 base_dir = os.path.dirname(os.path.abspath(__file__))
 load_dotenv()
 
-# 让 Streamlit Cloud 在启动时自动下载浏览器
+# 再下载浏览器
 os.system("playwright install chromium")
 # 把当前脚本所在目录加入模块搜索路径
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
