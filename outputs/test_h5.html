@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>精准掌控者 · 野性谁都有，掌控力才是稀缺品</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    overflow-x: hidden;
+  }
+
+  body {
+    padding-bottom: 130px;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(0, 180, 255, 0.18), transparent 55%),
+      radial-gradient(circle at 90% 15%, rgba(0, 120, 255, 0.12), transparent 50%),
+      linear-gradient(180deg, #0d1117 0%, #111820 45%, #0a0e13 100%);
+    background-attachment: fixed;
+  }
+
+  /* ============ 顶部大标题 ============ */
+  .hero {
+    position: relative;
+    padding: 46px 22px 38px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.35), transparent 65%);
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 180, 255, 0.7), transparent);
+  }
+
+  .tag {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #4fd1ff;
+    border: 1px solid rgba(79, 209, 255, 0.45);
+    border-radius: 20px;
+    padding: 5px 16px;
+    margin-bottom: 20px;
+    background: rgba(0, 140, 255, 0.08);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero h1 {
+    position: relative;
+    font-size: 34px;
+    line-height: 1.28;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(180deg, #ffffff 0%, #9fd8ff 55%, #2ea8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(0, 160, 255, 0.35);
+  }
+
+  .hero h1 .accent {
+    display: block;
+    font-size: 40px;
+    margin-top: 6px;
+    background: linear-gradient(180deg, #ffffff 0%, #4fd1ff 60%, #007bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero .sub {
+    position: relative;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #8b9bab;
+    letter-spacing: 1.5px;
+  }
+
+  /* ============ 核心话术区 ============ */
+  .section {
+    padding: 0 18px;
+    margin-top: 30px;
+  }
+
+  .quote-card {
+    position: relative;
+    border-radius: 18px;
+    padding: 30px 22px 26px;
+    background: linear-gradient(155deg, rgba(0, 130, 255, 0.16) 0%, rgba(13, 17, 23, 0.9) 60%);
+    border: 1px solid rgba(0, 170, 255, 0.28);
+    box-shadow: 0 12px 40px rgba(0, 90, 200, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+  }
+
+  .quote-card::before {
+    content: "“";
+    position: absolute;
+    top: -18px;
+    left: 12px;
+    font-size: 110px;
+    font-family: Georgia, serif;
+    color: rgba(0, 170, 255, 0.16);
+    line-height: 1;
+  }
+
+  .quote-card .quote-text {
+    position: relative;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .quote-card .quote-text em {
+    font-style: normal;
+    color: #4fd1ff;
+    text-shadow: 0 0 18px rgba(79, 209, 255, 0.6);
+  }
+
+  .quote-card .quote-desc {
+    position: relative;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #93a4b5;
+  }
+
+  .points {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .point {
+    flex: 1;
+    text-align: center;
+    padding: 14px 6px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 170, 255, 0.18);
+  }
+
+  .point .num {
+    font-size: 20px;
+    font-weight: 900;
+    color: #4fd1ff;
+    letter-spacing: 0.5px;
+  }
+
+  .point .label {
+    margin-top: 5px;
+    font-size: 11px;
+    color: #7d8fa1;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ 促销活动区 ============ */
+  .promo {
+    position: relative;
+    margin-top: 30px;
+    border-radius: 18px;
+    padding: 26px 20px 24px;
+    background: linear-gradient(160deg, #062a4d 0%, #0a1a2b 55%, #0d1117 100%);
+    border: 1px solid rgba(0, 170, 255, 0.35);
+    box-shadow: 0 14px 44px rgba(0, 100, 220, 0.22);
+    overflow: hidden;
+  }
+
+  .promo::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(0, 190, 255, 0.35), transparent 70%);
+    pointer-events: none;
+  }
+
+  .promo-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .promo-head .fire {
+    font-size: 18px;
+  }
+
+  .promo-head .title {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+
+  .promo-head .badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    color: #0d1117;
+    background: linear-gradient(90deg, #4fd1ff, #00a2ff);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .promo-main {
+    position: relative;
+    margin-top: 18px;
+    padding: 18px 16px;
+    border-radius: 14px;
+    background: rgba(0, 140, 255, 0.1);
+    border: 1px dashed rgba(79, 209, 255, 0.5);
+  }
+
+  .promo-main .gift {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #d8e8f5;
+  }
+
+  .promo-main .gift strong {
+    color: #4fd1ff;
+    font-size: 17px;
+  }
+
+  .promo-main .gift .price {
+    color: #ffd166;
+    font-weight: 900;
+    font-size: 18px;
+  }
+
+  .promo-main .limit {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ff8f6b;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* 倒计时 */
+  .countdown-wrap {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .countdown-label {
+    font-size: 12px;
+    color: #8b9bab;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cd-box {
+    min-width: 56px;
+    padding: 10px 4px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #123a5e 0%, #0a1c2e 100%);
+    border: 1px solid rgba(79, 209, 255, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 90, 200, 0.3);
+  }
+
+  .cd-box .num {
+    font-size: 24px;
+    font-weight: 900;
+    color: #4fd1ff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 14px rgba(79, 209, 255, 0.7);
+    line-height: 1;
+  }
+
+  .cd-box .unit {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #7d8fa1;
+    letter-spacing: 1px;
+  }
+
+  .cd-colon {
+    font-size: 20px;
+    font-weight: 900;
+    color: #4fd1ff;
+    padding-bottom: 14px;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.25; }
+  }
+
+  .deadline {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #ff8f6b;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ 底部行动按钮 ============ */
+  .action-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+    gap: 10px;
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(13, 17, 23, 0.75) 0%, rgba(10, 14, 19, 0.98) 45%);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(0, 170, 255, 0.25);
+  }
+
+  .btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 58px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .btn:active {
+    transform: scale(0.96);
+  }
+
+  .btn .icon {
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  .btn-call {
+    color: #ffffff;
+    background: linear-gradient(135deg, #00a2ff 0%, #0066ff 100%);
+    box-shadow: 0 8px 22px rgba(0, 120, 255, 0.45);
+  }
+
+  .btn-map {
+    color: #0d1117;
+    background: linear-gradient(135deg, #7fe3ff 0%, #4fd1ff 100%);
+    box-shadow: 0 8px 22px rgba(79, 209, 255, 0.35);
+  }
+
+  .btn .sub-text {
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+
+  /* 底部信息 */
+  .footer-info {
+    margin-top: 26px;
+    padding: 0 18px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #5f7183;
+  }
+
+  .footer-info .addr {
+    color: #8b9bab;
+  }
+
+  /* 小屏适配 */
+  @media (max-width: 360px) {
+    .hero h1 { font-size: 29px; }
+    .hero h1 .accent { font-size: 34px; }
+    .quote-card .quote-text { font-size: 21px; }
+    .cd-box { min-width: 48px; }
+    .cd-box .num { font-size: 21px; }
+    .btn { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ 顶部大标题 ============ -->
+  <header class="hero">
+    <div class="tag">精 准 掌 控 者</div>
+    <h1>
+      野性谁都有
+      <span class="accent">掌控力才是稀缺品</span>
+    </h1>
+    <p class="sub">不盲目越野 · 只做精准操控与安全</p>
+  </header>
+
+  <!-- ============ 核心话术区 ============ -->
+  <section class="section">
+    <div class="quote-card">
+      <p class="quote-text">
+        野性谁都有，<br><em>掌控力才是稀缺品。</em>
+      </p>
+      <p class="quote-desc">
+        真正的强者，不是征服荒野，而是征服每一个失控的瞬间。
+        精准操控，让每一次转向、每一次制动，都在你的掌控之中。
+      </p>
+      <div class="points">
+        <div class="point">
+          <div class="num">精准</div>
+          <div class="label">操控响应</div>
+        </div>
+        <div class="point">
+          <div class="num">安全</div>
+          <div class="label">全程守护</div>
+        </div>
+        <div class="point">
+          <div class="num">掌控</div>
+          <div class="label">人车合一</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 限时限量促销活动区 ============ -->
+  <section class="section">
+    <div class="promo">
+      <div class="promo-head">
+        <span class="fire">🔥</span>
+        <span class="title">限时限量 · 预定专享</span>
+        <span class="badge">仅限30名</span>
+      </div>
+
+      <div class="promo-main">
+        <p class="gift">
+          前 <strong>30 名</strong> 预定，即赠<br>
+          价值 <span class="price">¥1000</span> 的
+          <strong>「精准操控培训营」</strong> 名额
+        </p>
+        <p class="limit">⚠️ 名额有限，赠完即止，先到先得</p>
+      </div>
+
+      <div class="countdown-wrap">
+        <p class="countdown-label">距 活 动 结 束 还 剩</p>
+        <div class="countdown" id="countdown">
+          <div class="cd-box">
+            <div class="num" id="cd-hour">00</div>
+            <div class="unit">时</div>
+          </div>
+          <div class="cd-colon">:</div>
+          <div class="cd-box">
+            <div class="num" id="cd-min">00</div>
+            <div class="unit">分</

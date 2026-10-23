@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>专家级焕颜 · 限量30席</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { width: 100%; overflow-x: hidden; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    background: #0d1f18;
+    color: #fff;
+    line-height: 1.6;
+    padding-bottom: 96px;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; position: relative; }
+
+  /* 顶部 */
+  .hero {
+    background: linear-gradient(160deg, #0d1f18 0%, #14342a 55%, #0d1f18 100%);
+    padding: 34px 22px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,.28), transparent 70%);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px; left: -50px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,.16), transparent 70%);
+  }
+  .brand {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #d4af37;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+  .brand span { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,175,55,.5); border-radius: 20px; }
+  .main-title {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.32;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #fff 30%, #f0e2b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .main-title em {
+    font-style: normal;
+    color: #ff5a4d;
+    -webkit-text-fill-color: #ff5a4d;
+  }
+  .sub-title {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #b9cdc4;
+    letter-spacing: .5px;
+    position: relative;
+    z-index: 2;
+  }
+  .sub-title b { color: #d4af37; font-weight: 600; }
+
+  /* 信任条 */
+  .trust-bar {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(212,175,55,.08);
+    border-top: 1px solid rgba(212,175,55,.22);
+    border-bottom: 1px solid rgba(212,175,55,.22);
+    padding: 14px 8px;
+  }
+  .trust-item { text-align: center; flex: 1; }
+  .trust-item .num { font-size: 19px; font-weight: 800; color: #d4af37; }
+  .trust-item .lbl { font-size: 11px; color: #9fb5ab; margin-top: 2px; }
+
+  /* 核心话术区 */
+  .section { padding: 26px 20px; }
+  .sec-head { display: flex; align-items: center; margin-bottom: 16px; }
+  .sec-head .bar { width: 4px; height: 18px; background: #d4af37; border-radius: 2px; margin-right: 10px; }
+  .sec-head h2 { font-size: 18px; font-weight: 800; letter-spacing: .5px; }
+  .sec-head .tag {
+    margin-left: auto;
+    font-size: 10px;
+    color: #0d1f18;
+    background: #d4af37;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .talk-card {
+    background: linear-gradient(150deg, #173a2e, #102a21);
+    border: 1px solid rgba(212,175,55,.25);
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .talk-card .q {
+    font-size: 12px;
+    color: #ff8a7d;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  .talk-card .q::before {
+    content: "“";
+    font-size: 26px;
+    color: #d4af37;
+    line-height: 0;
+    margin-right: 4px;
+    position: relative;
+    top: 6px;
+  }
+  .talk-card p {
+    font-size: 13.5px;
+    color: #dbe7e1;
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+  .talk-card p:last-child { margin-bottom: 0; }
+  .talk-card .hl { color: #ffd76a; font-weight: 700; }
+  .talk-card .price { color: #ff5a4d; font-weight: 800; }
+
+  /* 促销区 */
+  .promo {
+    margin: 6px 16px 0;
+    background: linear-gradient(165deg, #1a3d30 0%, #0f2a20 100%);
+    border: 1px solid rgba(212,175,55,.4);
+    border-radius: 18px;
+    padding: 22px 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .promo::before {
+    content: "";
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 220px; height: 120px;
+    background: radial-gradient(ellipse, rgba(212,175,55,.22), transparent 70%);
+  }
+  .promo-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #0d1f18;
+    background: linear-gradient(90deg, #f5d97a, #d4af37);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+  }
+  .promo-title {
+    font-size: 21px;
+    font-weight: 900;
+    margin: 12px 0 4px;
+    position: relative;
+    z-index: 2;
+  }
+  .promo-title span { color: #ff5a4d; }
+  .promo-desc {
+    font-size: 12.5px;
+    color: #a9c0b6;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 16px;
+  }
+
+  /* 价格 */
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 6px;
+  }
+  .price-now { font-size: 44px; font-weight: 900; color: #ff5a4d; line-height: 1; }
+  .price-now small { font-size: 18px; font-weight: 700; }
+  .price-old { font-size: 15px; color: #7d948a; text-decoration: line-through; }
+  .price-note { text-align: center; font-size: 11.5px; color: #d4af37; position: relative; z-index: 2; margin-bottom: 16px; }
+
+  /* 倒计时 */
+  .countdown-box {
+    background: rgba(0,0,0,.35);
+    border: 1px dashed rgba(255,90,77,.5);
+    border-radius: 12px;
+    padding: 14px 10px 12px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 16px;
+  }
+  .cd-label { font-size: 12px; color: #ffb3ab; margin-bottom: 8px; letter-spacing: .5px; }
+  .cd-label b { color: #ff5a4d; }
+  .cd-timer { display: flex; justify-content: center; gap: 8px; }
+  .cd-cell {
+    background: linear-gradient(180deg, #ff5a4d, #c9302c);
+    border-radius: 8px;
+    min-width: 52px;
+    padding: 6px 4px 4px;
+    box-shadow: 0 4px 12px rgba(255,90,77,.35);
+  }
+  .cd-cell .v { font-size: 22px; font-weight: 900; color: #fff; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .cd-cell .u { font-size: 10px; color: rgba(255,255,255,.85); }
+
+  /* 名额进度 */
+  .stock { position: relative; z-index: 2; margin-bottom: 16px; }
+  .stock-top { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+  .stock-top .left { color: #ffb3ab; }
+  .stock-top .left b { color: #ff5a4d; font-size: 15px; }
+  .stock-top .right { color: #9fb5ab; }
+  .stock-bar { height: 10px; background: rgba(255,255,255,.1); border-radius: 6px; overflow: hidden; }
+  .stock-fill {
+    height: 100%;
+    width: 70%;
+    background: linear-gradient(90deg, #ff8a4d, #ff5a4d);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255,90,77,.6);
+    transition: width .6s ease;
+  }
+
+  /* 权益列表 */
+  .benefits { position: relative; z-index: 2; }
+  .benefit {
+    display: flex;
+    align-items: flex-start;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    font-size: 13px;
+    color: #dbe7e1;
+  }
+  .benefit:last-child { border-bottom: none; }
+  .benefit .ico {
+    flex-shrink: 0;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(212,175,55,.18);
+    color: #d4af37;
+    font-size: 11px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 9px;
+    margin-top: 2px;
+  }
+  .benefit b { color: #ffd76a; }
+
+  /* 涨价提示 */
+  .rise-tip {
+    margin: 18px 16px 0;
+    background: linear-gradient(90deg, rgba(255,90,77,.16), rgba(255,90,77,.04));
+    border-left: 3px solid #ff5a4d;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #ffd0cb;
+    line-height: 1.7;
+  }
+  .rise-tip b { color: #ff5a4d; }
+
+  /* 底部行动 */
+  .action-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(10,24,19,.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(212,175,55,.3);
+    z-index: 99;
+  }
+  .btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: .5px;
+  }
+  .btn-call {
+    background: linear-gradient(135deg, #f5d97a, #d4af37);
+    color: #0d1f18;
+    box-shadow: 0 6px 18px rgba(212,175,55,.35);
+  }
+  .btn-map {
+    background: linear-gradient(135deg, #ff6b5e, #d63a2f);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(255,90,77,.35);
+  }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .btn:active { transform: scale(.97); }
+
+  .footer-note {
+    text-align: center;
+    font-size: 11px;
+    color: #5f7a6e;
+    padding: 20px 20px 10px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 顶部 -->
+  <header class="hero">
+    <div class="brand"><span>专家级焕颜 · 限量30席</span></div>
+    <h1 class="main-title">别让犹豫，<br>偷走你的<em>新年</em>。</h1>
+    <p class="sub-title">局部精雕 + 婴儿肌焕活 · <b>数据可见的效果</b></p>
+  </header>
+
+  <!-- 信任条 -->
+  <div class="trust-bar">
+    <div class="trust-item"><div class="num">1000+</div><div class="lbl">临床案例</div></div>
+    <div class="trust-item"><div class="num">27%</div><div class="lbl">紧致度提升</div></div>
+    <div class="trust-item"><div class="num">30席</div><div class="lbl">限量名额</div></div>
+  </div>
+
+  <!-- 核心话术区 -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="bar"></span>
+      <h2>为什么选择我们</h2>
+      <span class="tag">专业锋利</span>
+    </div>
+
+    <div class="talk-card">
+      <div class="q">效果能不能量化？</div>
+      <p>我们不说"焕颜之旅"这种空话。做完当场对比照片，仪器实测——<span class="hl">紧致度提升27%</span>，数据说了算，不是形容词说了算。</p>
+    </div>
+
+    <div class="talk-card">
+      <div class="q">专家做过多少例？</div>
+      <p>李教授亲自操作，<span class="hl">上千例</span>同项目临床经验。谁愿意拿自己的脸给新手练手？找有经验的，就是给自己上保险。</p>
+    </div>
+
+    <div class="talk-card">
+      <div class="q">今天不做，明天会不会涨价？</div>
+      <p>会。前30名享<span class="price">1980元</span>，第31名起恢复<span class="price">2680元</span>。第4天起每天再涨100元。<span class="hl">你犹豫的每一天，都在涨价。</span></p>
+    </div>
+  </section>
+
+  <!-- 促销活动区 -->
+  <div class="promo">
+    <span class="promo-badge">新年焕颜 · 限量锁客计划</span>
+    <h3 class="promo-title">1980元 <span>焕颜礼遇</span></h3>
+    <p class="promo-desc">局部注射（3选1）+ 婴儿肌3次 · 含专属香氛体验</p>
+
+    <div class="price-row">
+      <div class="price-now"><small>¥</small>1980</div>
+      <div class="price-old">原价 ¥2680</div>
+    </div>
+    <p class="price-note">仅限前30名预约 · 第31名起恢复原价</p>

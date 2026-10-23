@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>专家级焕颜 · 限量30席</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { width:100%; overflow-x:hidden; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    background:#0d1f1a;
+    color:#f5f2ea;
+    line-height:1.6;
+    padding-bottom:96px;
+  }
+  .wrap { max-width:520px; margin:0 auto; }
+
+  /* 顶部 */
+  .hero {
+    position:relative;
+    padding:34px 22px 30px;
+    background:
+      radial-gradient(circle at 80% 0%, rgba(212,175,55,.28), transparent 55%),
+      linear-gradient(160deg,#0f2a22 0%,#0a1a15 60%,#0d1f1a 100%);
+    text-align:center;
+    border-bottom:1px solid rgba(212,175,55,.35);
+  }
+  .brand {
+    font-size:12px;
+    letter-spacing:3px;
+    color:#d4af37;
+    margin-bottom:18px;
+    font-weight:600;
+  }
+  .brand::before,.brand::after { content:"◆"; margin:0 8px; font-size:8px; vertical-align:middle; }
+  .hero h1 {
+    font-size:30px;
+    line-height:1.35;
+    font-weight:800;
+    letter-spacing:1px;
+    color:#f7f3e8;
+    text-shadow:0 2px 18px rgba(212,175,55,.25);
+  }
+  .hero h1 .gold { color:#e8c766; }
+  .hero .sub {
+    margin-top:14px;
+    font-size:13.5px;
+    color:#b9c9c1;
+    letter-spacing:.5px;
+  }
+  .hero .sub b { color:#e8c766; font-weight:600; }
+
+  /* 通用区块 */
+  .section { padding:26px 20px; }
+  .sec-title {
+    display:flex; align-items:center; gap:10px;
+    font-size:18px; font-weight:800; color:#f7f3e8;
+    margin-bottom:16px;
+  }
+  .sec-title::before {
+    content:""; width:5px; height:20px; border-radius:3px;
+    background:linear-gradient(180deg,#e8c766,#b8902f);
+  }
+
+  /* 核心话术卡片 */
+  .card {
+    background:linear-gradient(150deg,#14332a,#0f2620);
+    border:1px solid rgba(212,175,55,.28);
+    border-radius:14px;
+    padding:18px 18px 16px;
+    margin-bottom:14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::after {
+    content:""; position:absolute; top:0; right:0;
+    width:70px; height:70px;
+    background:radial-gradient(circle at top right, rgba(212,175,55,.18), transparent 70%);
+  }
+  .card .tag {
+    display:inline-block;
+    font-size:11px; font-weight:700;
+    color:#0d1f1a;
+    background:linear-gradient(90deg,#e8c766,#d4af37);
+    padding:3px 10px; border-radius:20px;
+    margin-bottom:10px;
+    letter-spacing:.5px;
+  }
+  .card p { font-size:14px; color:#d8e2dc; margin-bottom:8px; }
+  .card p:last-child { margin-bottom:0; }
+  .card .hl { color:#e8c766; font-weight:700; }
+  .card .num { color:#ff6b5e; font-weight:800; font-size:15px; }
+
+  /* 促销区 */
+  .promo {
+    margin:6px 16px 0;
+    border-radius:18px;
+    padding:24px 20px 22px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255,107,94,.18), transparent 60%),
+      linear-gradient(160deg,#1a3a2f,#0c1f19);
+    border:1.5px solid rgba(212,175,55,.5);
+    box-shadow:0 10px 40px rgba(0,0,0,.45), inset 0 0 40px rgba(212,175,55,.06);
+    text-align:center;
+    position:relative;
+  }
+  .promo .ribbon {
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:linear-gradient(90deg,#ff6b5e,#e0453a);
+    color:#fff; font-size:12px; font-weight:800;
+    padding:5px 18px; border-radius:20px;
+    letter-spacing:1px;
+    box-shadow:0 4px 14px rgba(224,69,58,.5);
+    white-space:nowrap;
+  }
+  .promo .price-line { margin-top:14px; }
+  .promo .price {
+    font-size:52px; font-weight:900; color:#ff6b5e;
+    letter-spacing:-1px; line-height:1;
+    text-shadow:0 4px 24px rgba(255,107,94,.35);
+  }
+  .promo .price small { font-size:20px; font-weight:700; margin-right:2px; }
+  .promo .price-old {
+    font-size:14px; color:#8fa39a; text-decoration:line-through;
+    margin-left:8px;
+  }
+  .promo .pkg {
+    margin-top:12px; font-size:14px; color:#d8e2dc;
+  }
+  .promo .pkg b { color:#e8c766; }
+  .promo .gift {
+    margin-top:14px; font-size:12.5px; color:#b9c9c1;
+    background:rgba(212,175,55,.08);
+    border:1px dashed rgba(212,175,55,.4);
+    border-radius:10px; padding:10px 12px;
+    text-align:left;
+  }
+  .promo .gift span { color:#e8c766; font-weight:700; }
+
+  /* 倒计时 */
+  .countdown-box { margin-top:20px; }
+  .countdown-label {
+    font-size:12.5px; color:#ffb3ac; letter-spacing:1px; margin-bottom:10px;
+    font-weight:600;
+  }
+  .countdown {
+    display:flex; justify-content:center; gap:8px;
+  }
+  .cd-item {
+    background:linear-gradient(180deg,#0a1a15,#06110d);
+    border:1px solid rgba(255,107,94,.45);
+    border-radius:10px;
+    min-width:62px;
+    padding:10px 4px 8px;
+    box-shadow:inset 0 0 16px rgba(255,107,94,.12);
+  }
+  .cd-item .n {
+    font-size:26px; font-weight:900; color:#ff6b5e;
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+  .cd-item .u { font-size:10px; color:#8fa39a; margin-top:5px; letter-spacing:1px; }
+  .cd-sep { align-self:center; color:#ff6b5e; font-weight:900; font-size:20px; }
+
+  /* 稀缺提示 */
+  .scarcity {
+    margin-top:18px;
+    font-size:13px; color:#f7f3e8;
+    background:linear-gradient(90deg,rgba(255,107,94,.16),rgba(255,107,94,.04));
+    border-left:3px solid #ff6b5e;
+    border-radius:8px;
+    padding:10px 12px;
+    text-align:left;
+  }
+  .scarcity b { color:#ff6b5e; }
+
+  /* 信任条 */
+  .trust {
+    display:flex; gap:10px; margin:22px 16px 0;
+  }
+  .trust .t-item {
+    flex:1; text-align:center;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(212,175,55,.2);
+    border-radius:12px; padding:14px 6px;
+  }
+  .trust .t-item .big { font-size:20px; font-weight:900; color:#e8c766; }
+  .trust .t-item .small { font-size:11px; color:#9fb3aa; margin-top:4px; }
+
+  /* 底部行动 */
+  .footer-bar {
+    position:fixed; left:0; right:0; bottom:0; z-index:99;
+    max-width:520px; margin:0 auto;
+    display:flex; gap:10px;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(13,31,26,.85),#0a1a15 40%);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(212,175,55,.3);
+  }
+  .btn {
+    flex:1;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    height:52px; border-radius:12px;
+    font-size:15px; font-weight:800; letter-spacing:.5px;
+    text-decoration:none; border:none; cursor:pointer;
+    transition:transform .12s ease;
+  }
+  .btn:active { transform:scale(.96); }
+  .btn-call {
+    background:linear-gradient(135deg,#e8c766,#c99b2e);
+    color:#0d1f1a;
+    box-shadow:0 6px 20px rgba(212,175,55,.4);
+  }
+  .btn-map {
+    background:linear-gradient(135deg,#1f4a3b,#14332a);
+    color:#e8c766;
+    border:1.5px solid rgba(212,175,55,.55);
+  }
+  .btn svg { width:18px; height:18px; }
+
+  .foot-note {
+    text-align:center; font-size:11px; color:#5f7a6f;
+    padding:22px 20px 8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 顶部 -->
+  <header class="hero">
+    <div class="brand">专家级焕颜 · 限量30席</div>
+    <h1>别让犹豫，<br><span class="gold">偷走你的新年。</span></h1>
+    <p class="sub">局部精雕 + 婴儿肌焕活 · <b>数据可见的效果</b></p>
+  </header>
+
+  <!-- 核心话术 -->
+  <section class="section">
+    <div class="sec-title">为什么这次别再"考虑考虑"</div>
+
+    <div class="card">
+      <span class="tag">看得见的效果</span>
+      <p>今天做的局部项目，仪器实测紧致度提升 <span class="num">27%</span>。</p>
+      <p>不是形容词，是<span class="hl">数据说了算</span>——拍照对比，效果看得见。</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">只动该动的地方</span>
+      <p>您的五官底子很好，<span class="hl">唯一需要精雕的就是这一处</span>。</p>
+      <p>李教授做过 <span class="num">上千例</span>，按您的面部结构定制，不套模板。</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">犹豫的代价</span>
+      <p>您犹豫的每一天，<span class="hl">都在涨价</span>。</p>
+      <p>前30名 <span class="num">1980元</span>，第31名起恢复 <span class="num">2680元</span>。</p>
+    </div>
+  </section>
+
+  <!-- 促销区 -->
+  <div class="promo">
+    <div class="ribbon">🔥 新年焕颜 · 限量锁客计划</div>
+
+    <div class="price-line">
+      <span class="price"><small>¥</small>1980</span>
+      <span class="price-old">¥2680</span>
+    </div>
+
+    <div class="pkg">局部注射（3选1）+ 婴儿肌 <b>3次</b></div>
+
+    <div class="gift">
+      🎁 独家赠品：定制「焕颜」同款香氛小样一瓶<br>
+      <span>让这个味道，成为您变美的记忆开关。</span>
+    </div>
+
+    <div class="countdown-box">
+      <div class="countdown-label">⏰ 距本档优惠结束仅剩</div>
+      <div class="countdown" id="countdown">
+        <div class="cd-item"><div class="n" id="cd-h">00</div><div class="u">时</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><div class="n" id="cd-m">00</div><div class="u">分</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><div class="n" id="cd-s">00</div><div class="u">秒</div></div>
+      </div>
+    </div>
+
+    <div class="scarcity">
+      ⚠️ 前30个名额已剩 <b>9个</b>，第31位起恢复2680元。<br>
+      每日仅接待 <b>5位</b> 新客，约满即止。
+    </div>
+  </div>
+
+  <!-- 信任条 -->
+  <div class="trust">
+    <div class="t-item"><div class="big">上千例</div><div class="small">临床经验</div></div>
+    <div class="t-item"><div class="big">27%</div><div class="small">紧致度提升</div></div>
+    <div class="t-item"><div class="big">30席</div><div class="small">限量名额</div></div>
+  </div>
+
+  <p class="foot-note">* 活动最终解释权归门店所有 · 效果因人而异</p>
+</div>
+
+<!-- 底部行动 -->
+<div class="footer-bar">
+  <a class="btn btn-call" href="tel:4001234567">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    一键拨号
+  </a>
+  <a class="btn btn-map" href="https://uri.amap.com/marker?position=116.481488,39.990464&name=北京市朝阳区xxx路xxx号" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    地图导航
+  </a>
+</div>
+
+<script>
+(function () {
+  // 默认 24 小时倒计时（以首次访问为起点，存 localStorage 保证刷新不重置）
+  var KEY = 'hy_countdown_end';
+  var DURATION = 24 * 60 * 60 * 1000;
+  var end = parseInt(localStorage.getItem(

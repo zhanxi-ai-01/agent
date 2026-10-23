@@ -1,0 +1,6 @@
+.env
+data/source_documents/
+data/chroma_db/
+volumes/
+__pycache__/
+*.pyc
