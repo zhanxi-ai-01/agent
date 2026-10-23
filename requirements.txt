@@ -1,3 +1,4 @@
+
 #依赖包列表
 streamlit
 python-dotenv
@@ -15,4 +16,3 @@ langchain-text-splitters
 dashscope
 pymilvus
 python-docx
-playwright==1.49.0

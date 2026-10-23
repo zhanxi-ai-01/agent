@@ -2,12 +2,10 @@ import streamlit as st
 import sys
 import os
 from dotenv import load_dotenv
+
 base_dir = os.path.dirname(os.path.abspath(__file__))
 load_dotenv()
 
-# 再下载浏览器
-os.system("playwright install chromium")
-# 把当前脚本所在目录加入模块搜索路径
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # 导入 5 个核心组件 (⭐⭐⭐ 修改点 1：新增了 tab_script 的导入)
