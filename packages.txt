@@ -1,0 +1,11 @@
+streamlit
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+openai
+dashscope
+pymilvus
+python-docx
+playwright==1.49.0

@@ -1,9 +1,12 @@
 import streamlit as st
 import sys
-
 import os
 from dotenv import load_dotenv
+base_dir = os.path.dirname(os.path.abspath(__file__))
+load_dotenv()
 
+# 让 Streamlit Cloud 在启动时自动下载浏览器
+os.system("playwright install chromium")
 # 把当前脚本所在目录加入模块搜索路径
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,8 +17,7 @@ from ui.tab_h5 import render_tab_h5
 from ui.tab_poster import render_tab_poster
 from ui.tab_script import render_tab_script  # ⭐️ 新增的话术模块
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
-load_dotenv()
+
 
 # ==================== 页面配置 ====================
 st.set_page_config(
