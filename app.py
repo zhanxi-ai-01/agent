@@ -138,7 +138,7 @@ with col_title:
         unsafe_allow_html=True
     )
     st.markdown(
-        "<p style='font-size: 22px; color: #555; margin-top: 5px; margin-left: 10px; '>竞品分析 ⇨ AI智能生成营销策略 ⇨ 海报设计 ▌ 销冠话术</p>",
+        "<p style='font-size: 22px; color: #555; margin-top: 5px; margin-left: 10px; '>竞品分析 ⇨ AI智能生成营销策略 ⇨ H5海报设计 ▌ 销冠话术</p>",
         unsafe_allow_html=True
     )
 st.markdown("---")
@@ -149,7 +149,6 @@ nav_options = [
     "📸 AI分析爆款海报",
     "🧠 AI生成营销方案",
     "📱 H5 宣传页面生成",
-    "🖼️ AI智能设计海报",
     "👑️ 销冠成交话术"  # ⭐️ 新增导航
 ]
 
@@ -218,8 +217,6 @@ elif selected_tab == "🧠 AI生成营销方案":
     render_tab_strategy()
 elif selected_tab == "📱 H5 宣传页面生成":
     render_tab_h5()
-elif selected_tab == "🖼️ AI智能设计海报":
-    render_tab_poster()
 elif selected_tab == "👑️ 销冠成交话术":  # ⭐️ 新增路由
     render_tab_script()
 
