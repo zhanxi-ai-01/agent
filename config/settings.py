@@ -1,9 +1,3 @@
-# import os
-# from dotenv import load_dotenv
-# if os.path.exists(env_path):
-#     load_dotenv(dotenv_path=env_path)
-# else:
-#     print(f"⚠️ 警告: 没有找到 .env 文件，请检查路径: {env_path}")
 #10月23号部署后修改 ===============================================
 import os
 from dotenv import load_dotenv

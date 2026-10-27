@@ -8,14 +8,14 @@ def render_tab_vision():
     st.markdown(
         "<h3 style='font-size: 24px; font-weight: 600; margin-bottom: 0px; margin-top: 10px;'>📷 AI分析爆款营销海报</h3>",
         unsafe_allow_html=True)
-    st.markdown("上传一张竞争对手营销海报，AI自动提取核心卖点、目标人群和营销策略。")
+    st.markdown("上传一张爆款营销海报，AI自动提取核心卖点、目标人群和营销策略。")
 
     # 1. 文件上传组件
     uploaded_file = st.file_uploader("请选择或拖拽一张图片", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         # 预览上传的图片
-        st.image(uploaded_file, caption="已上传的对手图片", width=400)
+        st.image(uploaded_file, caption="已上传的对手图片", width=200)
 
         # 2. 分析按钮
         if st.button("🚀 开始分析图片", type="primary"):
